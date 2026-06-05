@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matildas Monitor — Public Player Database</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.matildasmonitor.com/">
+
+  <!-- Meta -->
+  <meta name="description" content="Searchable index of Australian women's footballers. Filter by club, position, country, or year of birth. Updated daily.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Matildas Monitor — Public Player Database">
+  <meta property="og:description" content="Searchable index of Australian women's footballers. Filter by club, position, country, or year of birth.">
+  <meta property="og:url" content="https://www.matildasmonitor.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Matildas Monitor">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5H8MN9P40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C5H8MN9P40');
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #C8A84B;
+      --gold-dim: rgba(200, 168, 75, 0.15);
+      --gold-border: rgba(200, 168, 75, 0.25);
+      --bg: #0d1117;
+      --bg-surface: #111820;
+      --text: #e8ecf1;
+      --text-muted: #556070;
+      --text-sub: #8a95a3;
+      --divider: #1d2535;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Barlow Condensed', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Top accent bar ── */
+    .top-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold) 0%, rgba(200,168,75,0.4) 100%);
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 60px;
+      border-bottom: 1px solid var(--divider);
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .brand-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--gold); }
+
+    .nav-link.substack {
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      padding: 5px 12px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .nav-link.substack:hover {
+      background: rgba(200,168,75,0.25);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 36px 40px 24px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .hero-left {}
+
+    .hero-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-sub);
+      letter-spacing: 0.02em;
+      max-width: 520px;
+      line-height: 1.5;
+    }
+
+    .hero-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .meta-chip {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+    }
+
+    .meta-chip span {
+      color: var(--text-sub);
+      margin-left: 4px;
+    }
+
+    /* ── Embed ── */
+    .embed-wrapper {
+      width: 100%;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .embed-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 80vh;
+      min-height: 600px;
+      border: none;
+    }
+
+    /* ── Info bar ── */
+    .info-bar {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .info-cell {
+      flex: 1;
+      padding: 20px 40px;
+      border-right: 1px solid var(--divider);
+    }
+
+    .info-cell:last-child { border-right: none; }
+
+    .info-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .info-value {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-sub);
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+    }
+
+    .info-link {
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold-border);
+      transition: border-color 0.2s;
+    }
+
+    .info-link:hover { border-color: var(--gold); }
+
+    /* ── Footer ── */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+    }
+
+    .footer-left {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-left a {
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .footer-left a:hover { color: var(--text-sub); }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .social-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .social-link:hover { color: var(--gold); }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      header { padding: 0 20px; }
+
+      .brand-tag, nav .nav-link:not(.substack) { display: none; }
+
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 20px 20px;
+        gap: 16px;
+      }
+
+      .hero-title { font-size: 26px; }
+
+      .hero-right { display: none; }
+
+      .embed-wrapper iframe { height: 70vh; }
+
+      .info-bar { flex-direction: column; }
+
+      .info-cell {
+        padding: 16px 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--divider);
+      }
+
+      .info-cell:last-child { border-bottom: none; }
+
+      footer {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 20px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar"></div>
+
+  <header>
+    <div class="brand">
+      <div class="brand-name">Matildas Monitor</div>
+      <div class="brand-dot"></div>
+      <div class="brand-tag">Australian Women's Football</div>
+    </div>
+    <nav>
+      <a href="https://x.com/MatildasMonitor" target="_blank" rel="noopener" class="nav-link">X / Twitter</a>
+      <a href="https://bsky.app/profile/matildasmonitor.bsky.social" target="_blank" rel="noopener" class="nav-link">Bluesky</a>
+      <a href="https://substack.com/@matildasmonitor" target="_blank" rel="noopener" class="nav-link substack">Scouting Reports ↗</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-label">Public Player Database</div>
+      <h1 class="hero-title">Australian Women's<br>Football Index</h1>
+      <p class="hero-desc">Searchable index of Australian women's footballers. Filter by club, position, country, or year of birth.</p>
+    </div>
+    <div class="hero-right">
+      <div class="meta-chip">Updated <span>Daily</span></div>
+      <div class="meta-chip">Sources <span>Official</span></div>
+    </div>
+  </section>
+
+  <div class="embed-wrapper">
+    <iframe
+      src="https://lookerstudio.google.com/embed/reporting/e6cb449f-ae18-4230-bc78-c2e74e33641b/page/YSSYF"
+      allowfullscreen
+      title="Matildas Monitor — Public Player Database"
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="info-bar">
+    <div class="info-cell">
+      <div class="info-label">Data Notes</div>
+      <div class="info-value">Sources prioritise official club and league pages. Updated daily.</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-label">Privacy</div>
+      <div class="info-value">U16 players: year of birth shown only. No full DOB published.</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-label">Corrections & Takedowns</div>
+      <div class="info-value">
+        <a href="https://forms.gle/jaRegyoQistoocBaA" target="_blank" rel="noopener" class="info-link">Submit a correction</a>
+        &nbsp;·&nbsp;
+        <a href="https://docs.google.com/document/d/18BxzX_KysZy-wMlV7uPuLfs2JlzCgL9kHZmfL3wDr2M/edit?usp=sharing" target="_blank" rel="noopener" class="info-link">Data & takedown policy</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      © Matildas Monitor &nbsp;·&nbsp;
+      <a href="mailto:bradleyash04+matildasmonitor@gmail.com">Contact</a>
+    </div>
+    <div class="social-links">
+      <a href="https://x.com/MatildasMonitor" target="_blank" rel="noopener" class="social-link">X</a>
+      <a href="https://bsky.app/profile/matildasmonitor.bsky.social" target="_blank" rel="noopener" class="social-link">Bluesky</a>
+      <a href="https://substack.com/@matildasmonitor" target="_blank" rel="noopener" class="social-link">Substack</a>
+    </div>
+  </footer>
+
+</body>
+</html>
