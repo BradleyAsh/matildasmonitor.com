@@ -136,9 +136,9 @@
 
     /* ── Hero ── */
     .hero {
-      padding: 36px 40px 24px;
+      padding: 14px 40px;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: space-between;
       gap: 24px;
       border-bottom: 1px solid var(--divider);
@@ -146,35 +146,30 @@
     }
 
     .hero-label {
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      color: var(--green);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+      display: none;
     }
 
     .hero-title {
       font-family: Arial, sans-serif;
-      font-size: 36px;
+      font-size: 20px;
+      font-weight: bold;
       color: var(--green);
-      line-height: 1.1;
-      margin-bottom: 10px;
+      line-height: 1.2;
+      margin-bottom: 2px;
     }
 
     .hero-desc {
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 400;
-      color: var(--text-sub);
-      letter-spacing: 0.02em;
-      max-width: 520px;
-      line-height: 1.5;
+      color: var(--text-muted);
+      max-width: 600px;
+      line-height: 1.4;
     }
 
     .hero-right {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-shrink: 0;
     }
 
@@ -182,9 +177,9 @@
       font-family: Arial, sans-serif;
       font-size: 10px;
       color: var(--text-muted);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 5px 10px;
+      padding: 4px 9px;
       border: 1px solid var(--divider);
       border-radius: 2px;
       background: var(--bg);
@@ -298,10 +293,10 @@
       .hero {
         flex-direction: column;
         align-items: flex-start;
-        padding: 24px 20px 20px;
-        gap: 16px;
+        padding: 12px 20px;
+        gap: 6px;
       }
-      .hero-title { font-size: 26px; }
+      .hero-title { font-size: 16px; }
       .hero-right { display: none; }
       .embed-wrapper iframe { height: 85vh; min-height: 600px; }
       .info-bar { flex-direction: column; }
@@ -339,8 +334,7 @@
 
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-label">Public Player Database</div>
-      <h1 class="hero-title">Australian Women's<br>Football Index</h1>
+      <h1 class="hero-title">Australian Women's Football Index</h1>
       <p class="hero-desc">Searchable index of Australian women's footballers. Filter by club, position, country, or year of birth.</p>
     </div>
     <div class="hero-right">
