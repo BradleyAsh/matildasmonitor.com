@@ -9,12 +9,12 @@
   <link rel="canonical" href="https://www.matildasmonitor.com/">
 
   <!-- Meta -->
-  <meta name="description" content="Searchable index of Australian women's footballers. Filter by club, position, country, or year of birth. Updated daily.">
+  <meta name="description" content="Searchable database of Australian women's footballers. Filter by club, position, country, or year of birth. Updated daily.">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Matildas Monitor: Australian Women's Football Player Database">
-  <meta property="og:description" content="Searchable index of Australian women's footballers. Filter by club, position, country, or year of birth. Updated daily.">
+  <meta property="og:description" content="Searchable database of Australian women's footballers. Filter by club, position, country, or year of birth. Updated daily.">
   <meta property="og:url" content="https://www.matildasmonitor.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Matildas Monitor">
@@ -190,6 +190,32 @@
       margin-left: 4px;
     }
 
+        /* ── About ── */
+    .about {
+      padding: 24px 40px;
+      max-width: 860px;
+      border-bottom: 1px solid var(--divider);
+    }
+    .about h2 {
+      font-size: 16px;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    .about h3 {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 16px 0 6px;
+    }
+    .about p, .about li {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+    }
+    .about ul { padding-left: 20px; }
+
     /* ── Embed ── */
     .embed-wrapper {
       width: 100%;
@@ -334,20 +360,36 @@
 
   <section class="hero">
     <div class="hero-left">
-      <h1 class="hero-title">Australian Women's Football Index</h1>
-      <p class="hero-desc">Searchable index of Australian women's footballers. Filter by club, position, country, or year of birth.</p>
+      <h1 class="hero-title">Australian Women's Football Player Database</h1>
+<p class="hero-desc">Searchable database of Australian women's footballers. Filter by club, position, country, or year of birth.</p>
     </div>
     <div class="hero-right">
       <div class="meta-chip">Updated <span>Daily</span></div>
       <div class="meta-chip">Sources <span>Official</span></div>
     </div>
   </section>
-
+  <section class="about" id="about-the-database">
+    <h2>About the Matildas Monitor player database</h2>
+    <p>Matildas Monitor is an independent, public player database for Australian women's football. It tracks Australian footballers across the A-League Women, the state NPL Women's competitions, the college system and overseas professional leagues, in one searchable place. Around 428 player profiles are currently live, drawn from a master record of more than 1,100 players.</p>
+    <p>Each profile lists club, position, country and year of birth, with the official source used to verify it. The database exists for anyone following the national team pathway: analysts, coaches, journalists and supporters who want to know where the next Matildas are playing.</p>
+    <h3>Coverage</h3>
+    <ul>
+      <li><strong>A-League Women:</strong> every listed Australian player, updated through the season.</li>
+      <li><strong>NPL Women's:</strong> state league players across all federations.</li>
+      <li><strong>Overseas:</strong> Australians contracted to professional clubs abroad, plus the US college pipeline.</li>
+    </ul>
+    <h3>Pathway tiers</h3>
+    <p>Players are grouped by where they sit on the pathway. Tier 1 is uncapped players aged 15 to 22. Tier 2 is emerging A-League Women players. Tier 3 is the overseas pipeline. The tiers drive the scouting reports published on Substack; the database itself covers all of them.</p>
+    <h3>How the database is updated</h3>
+    <p>Records are updated daily. Sources prioritise official club and league pages over secondary reporting. Corrections can be submitted through the form at the bottom of this page and are actioned against the source, not the claim.</p>
+    <h3>Privacy</h3>
+    <p>Players under 16 are shown with year of birth only. No full date of birth is published for any player, and no contact details or personal information beyond the football record are held.</p>
+  </section>
   <div class="embed-wrapper">
     <iframe
       src="https://lookerstudio.google.com/embed/reporting/e6cb449f-ae18-4230-bc78-c2e74e33641b/page/YSSYF"
       allowfullscreen
-      title="Matildas Monitor — Public Player Database"
+      title="Matildas Monitor - Public Player Database"
       loading="lazy">
     </iframe>
   </div>
