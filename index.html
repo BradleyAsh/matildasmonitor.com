@@ -227,9 +227,10 @@
       .about-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── Embed ── */
-    .embed-wrapper {
+        .embed-wrapper {
       width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
       background: var(--bg);
     }
 
@@ -378,6 +379,14 @@
       <div class="meta-chip">Sources <span>Official</span></div>
     </div>
   </section>
+  <div class="embed-wrapper">
+    <iframe
+      src="https://lookerstudio.google.com/embed/reporting/e6cb449f-ae18-4230-bc78-c2e74e33641b/page/YSSYF"
+      allowfullscreen
+      title="Matildas Monitor - Public Player Database"
+      loading="lazy">
+    </iframe>
+  </div>
   <section class="about" id="about-the-database">
     <h2>About the Matildas Monitor player database</h2>
     <div class="about-grid">
@@ -403,15 +412,6 @@
       </div>
     </div>
   </section>
-  <div class="embed-wrapper">
-    <iframe
-      src="https://lookerstudio.google.com/embed/reporting/e6cb449f-ae18-4230-bc78-c2e74e33641b/page/YSSYF"
-      allowfullscreen
-      title="Matildas Monitor - Public Player Database"
-      loading="lazy">
-    </iframe>
-  </div>
-
   <div class="info-bar">
     <div class="info-cell">
       <div class="info-label">Data Notes</div>
