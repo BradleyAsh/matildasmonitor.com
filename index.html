@@ -9,12 +9,12 @@
   <link rel="canonical" href="https://www.matildasmonitor.com/">
 
   <!-- Meta -->
-  <meta name="description" content="Searchable database of Australian women's footballers. Filter by club, position, country, or year of birth. Updated daily.">
+  <meta name="description" content="Searchable database of Australian women's footballers. Filter by club, position, country, year of birth, or last season's appearances and goals. Updated daily.">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Matildas Monitor: Australian Women's Football Player Database">
-  <meta property="og:description" content="Searchable database of Australian women's footballers. Filter by club, position, country, or year of birth. Updated daily.">
+  <meta property="og:description" content="Searchable database of Australian women's footballers. Filter by club, position, country, year of birth, or last season's appearances and goals. Updated daily.">
   <meta property="og:url" content="https://www.matildasmonitor.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Matildas Monitor">
@@ -233,11 +233,11 @@
       background: var(--bg);
     }
 
-    .embed-wrapper iframe {
+        .embed-wrapper iframe {
       display: block;
       width: 100%;
-      height: 90vh;
-      min-height: 800px;
+      height: auto;
+      aspect-ratio: 1200 / 1540;
       border: none;
     }
 
@@ -335,7 +335,6 @@
       }
       .hero-title { font-size: 16px; }
       .hero-right { display: none; }
-      .embed-wrapper iframe { height: 85vh; min-height: 600px; }
       .info-bar { flex-direction: column; }
       .info-cell {
         padding: 16px 20px;
@@ -372,7 +371,7 @@
   <section class="hero">
     <div class="hero-left">
       <h1 class="hero-title">Australian Women's Football Player Database</h1>
-<p class="hero-desc">Searchable database of Australian women's footballers. Filter by club, position, country, or year of birth.</p>
+<p class="hero-desc">Searchable database of Australian women's footballers. Filter by club, position, country, year of birth, or last season's appearances and goals.</p>
     </div>
     <div class="hero-right">
       <div class="meta-chip">Updated <span>Daily</span></div>
@@ -383,8 +382,8 @@
     <h2>About the Matildas Monitor player database</h2>
     <div class="about-grid">
       <div>
-        <p>Matildas Monitor is an independent, public player database for Australian women's football. It tracks Australian footballers across the A-League Women, the state NPL Women's competitions, the college system and overseas professional leagues, in one searchable place. Around 428 player profiles are currently live, drawn from a master record of more than 1,100 players.</p>
-        <p>Each profile lists club, position, country and year of birth, with the official source used to verify it. The database exists for anyone following the national team pathway: analysts, coaches, journalists and supporters who want to know where the next Matildas are playing.</p>
+        <p>Matildas Monitor is an independent, public player database for Australian women's football. It tracks Australian footballers across the A-League Women, the state NPL Women's competitions, the college system and overseas professional leagues, in one searchable place. More than 440 player profiles are currently live, drawn from a master record of around 1,200 players.</p>
+        <p>Each profile lists club, position, country and year of birth, with the official source used to verify it, plus last season's appearances, goals and assists where a public record exists. The database exists for anyone following the national team pathway: analysts, coaches, journalists and supporters who want to know where the next Matildas are playing.</p>
         <h3>Pathway tiers</h3>
         <p>Players are grouped by where they sit on the pathway. Tier 1 is uncapped players aged 15 to 22. Tier 2 is emerging A-League Women players. Tier 3 is the overseas pipeline. The tiers drive the scouting reports published on <a href="https://matildasmonitor.substack.com/archive" style="color:#1b5e3a;text-decoration:underline;">Substack</a>; the database itself covers all of them.</p>
       </div>
@@ -397,6 +396,8 @@
         </ul>
         <h3>How the database is updated</h3>
         <p>Records are updated daily. Sources prioritise official club and league pages over secondary reporting. Corrections can be submitted through the form at the bottom of this page and are actioned against the source, not the claim.</p>
+                <h3>Season stats</h3>
+        <p>Appearances, goals and assists are shown for each player's most recent completed season on file. Current-season figures are not included. A-League Women figures cover the regular season and are sourced from <a href="https://fbref.com/en/comps/196/A-League-Women-Stats" style="color:#1b5e3a;text-decoration:underline;">FBref</a>. NPL Victoria and NPL Queensland figures are sourced from <a href="https://www.sofascore.com/" style="color:#1b5e3a;text-decoration:underline;">Sofascore</a> and include finals. A dash means no season record is held for that player, not that she did not play.</p>
         <h3>Privacy</h3>
         <p>Players under 16 are shown with year of birth only. No full date of birth is published for any player, and no contact details or personal information beyond the football record are held.</p>
       </div>
