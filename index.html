@@ -227,11 +227,14 @@
       .about-grid { grid-template-columns: 1fr; }
     }
 
-        .embed-wrapper {
+          .embed-wrapper {
       width: 100%;
       max-width: 1280px;
       margin: 0 auto;
       background: var(--bg);
+    }
+    @media (min-width: 1400px) {
+      .embed-wrapper { margin: 0 0 0 40px; }
     }
 
         .embed-wrapper iframe {
