@@ -131,7 +131,7 @@
       background: var(--bg-surface);
     }
     tbody td {
-      padding: 9px 10px;
+      padding: 9px 8px;
       border-bottom: 1px solid var(--divider);
       vertical-align: top;
       line-height: 1.4;
@@ -140,7 +140,10 @@
     tbody tr:hover { background: var(--bg-surface); }
     td.num { color: var(--text-muted); white-space: nowrap; width: 48px; }
     td.date { white-space: nowrap; color: var(--text-muted); width: 110px; }
-    td.tier { white-space: nowrap; width: 90px; }
+    td.tier { white-space: nowrap; width: 70px; font-weight: bold; color: var(--green); }
+    td.club { width: 230px; }
+    td.age { white-space: nowrap; width: 70px; }
+    td.caps { white-space: nowrap; width: 120px; }
     td.title a { color: var(--green); border-bottom: 1px solid var(--green-border); }
     td.title a:hover { border-color: var(--green); }
     .sub { display: block; font-size: 12px; color: var(--text-muted); margin-top: 2px; }
@@ -184,7 +187,10 @@
       table, tbody, tr, td { display: block; width: auto; }
       tbody tr { padding: 10px 0; border-bottom: 1px solid var(--divider); }
       tbody td { padding: 2px 0; border: none; }
-      td.num, td.date, td.tier { display: inline-block; margin-right: 10px; font-size: 12px; }
+      td.num, td.date, td.tier, td.age, td.caps { display: inline-block; margin-right: 10px; font-size: 12px; }
+      td.club { font-size: 13px; }
+      td.club::before { content: "At report: "; color: var(--text-muted); }
+      td.age::before { content: "Age "; color: var(--text-muted); }
       .info-bar { flex-direction: column; }
       .info-cell { padding: 16px 20px; border-right: none; border-bottom: 1px solid var(--divider); }
       .info-cell:last-child { border-bottom: none; }
@@ -224,40 +230,44 @@
   <main>
     <section id="player-reports">
       <h2>Individual player reports</h2>
-      <p class="section-note">One player, one match, usually the full 90 minutes. Tier 1 is uncapped players aged 15 to 22 on the pathway. Tier 2 is emerging A-League Women players. Reports are numbered in the order they were published.</p>
+      <p class="section-note">One player, one match, usually the full 90 minutes. Reports are numbered in the order they were published.</p>
+      <p class="section-note"><strong>How tiers are assigned.</strong> Tier 1: uncapped, aged 15 to 22, on the pathway (NPLW, academy or A-League Women). Tier 2: emerging A-League Women players aged 18 to 25, uncapped or with only a handful of senior caps. Tier 3: the overseas pipeline, footage permitting. Club, competition, age and cap status are as at the date of the report, not today. The tiers were formalised in 2026; earlier reports are classified retrospectively against the same rules, a senior Matilda sits outside them, and a player under 15 is marked Pathway (U15) rather than forced into Tier 1. Where a report did not state an age, year of birth is shown instead.</p>
       <table>
         <thead>
           <tr>
             <th>#</th>
             <th>Published</th>
             <th>Report</th>
+            <th>Club and competition at report</th>
+            <th>Age</th>
+            <th>Senior caps</th>
             <th>Tier</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="num">23</td><td class="date">25 Oct 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-r6-asha-sutton">Asha Sutton</a><span class="sub">Sydney FC. Scouting Report R6: A-League Women, Round 2 v Melbourne City.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">22</td><td class="date">20 Sep 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-aideen-keane-in-the">Aideen Keane</a><span class="sub">Melbourne City (Avondale). Scouting Report R5: NPLW Victoria Grand Final.</span></td><td class="tier">Tier 2</td></tr>
-          <tr><td class="num">21</td><td class="date">19 Aug 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-r4-leyla-hussein">Leyla Hussein</a><span class="sub">Melbourne Victory. Scouting Report R4: NPLW Victoria.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">20</td><td class="date">18 Jul 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-heidi-dalton-south-melbourne">Heidi Dalton</a><span class="sub">South Melbourne FC. NPLW Victoria.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">19</td><td class="date">27 Jun 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-jonti-fisher-a-creator">Jonti Fisher</a><span class="sub">Scouting Report R3: a creator in the wrong role.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">18</td><td class="date">8 Mar 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-lily-punch-football">Lily Punch</a><span class="sub">Football Queensland Academy.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">17</td><td class="date">1 Mar 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/layla-adams-19-resilience-under-pressure">Layla Adams</a><span class="sub">Goalkeeper, NPL Queensland. Resilience under pressure.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">16</td><td class="date">13 Feb 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/amelia-tartaglia-17-nplw-victoria">Amelia Tartaglia</a><span class="sub">Box Hill United. NPLW Victoria, Round 1.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">15</td><td class="date">22 Jan 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/a-calm-head-in-a-hostile-place-ilona">Ilona Melegh</a><span class="sub">Goalkeeper. A calm head in a hostile place, away to Newcastle.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">14</td><td class="date">24 Dec 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/alexia-apostolakis-melbourne-derby">Alexia Apostolakis</a><span class="sub">A-League Women, Melbourne Derby.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">13</td><td class="date">13 Dec 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/willa-pearson-14-an-a-league-test">Willa Pearson</a><span class="sub">A-League Women. An A-League test case at 14.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">12</td><td class="date">17 Nov 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/avaani-prakash-a-relentless-ball">Avaani Prakash</a><span class="sub">A relentless ball-winning engine at 18.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">11</td><td class="date">9 Nov 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/shelby-mcmahon-17-composed-clinical">Shelby McMahon</a><span class="sub">Composed, clinical, and mature beyond her years.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">10</td><td class="date">3 Nov 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/talia-younis-17-sharp-first-touch">Talia Younis</a><span class="sub">Sharp first touch, live inswinger.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">9</td><td class="date">6 Sep 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-spotlight-aeryn-tarrant">Aeryn Tarrant</a><span class="sub">Scouting Spotlight: pressure test on both flanks.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">8</td><td class="date">30 Aug 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-alexis-pantazopoulos">Alexis Pantazopoulos</a><span class="sub">Sixteen and strong.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">7</td><td class="date">16 Aug 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-ava-briedis">Ava Briedis</a><span class="sub">Scouting report.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">6</td><td class="date">8 Jul 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-tahlia-franco-composed">Tahlia Franco</a><span class="sub">Composed under pressure, but room to grow.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">5</td><td class="date">25 Jun 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/poppy-okeeffe-deep-lying-composure">Poppy O'Keeffe</a><span class="sub">Deep-lying composure at 16.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">4</td><td class="date">17 Jun 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-danella-butrus-bulleen">Danella Butrus</a><span class="sub">Bulleen Lions. NPLW Victoria.</span></td><td class="tier">Tier 1</td></tr>
-          <tr><td class="num">3</td><td class="date">1 Jun 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/winonah-heatley-deep-lying-control">Winonah Heatley</a><span class="sub">Deep-lying control on display for the Matildas.</span></td><td class="tier">Senior</td></tr>
-          <tr><td class="num">2</td><td class="date">8 May 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-alana-murphy-deep">Alana Murphy</a><span class="sub">Melbourne Victory. Deep-lying composure.</span></td><td class="tier">Tier 2</td></tr>
-          <tr><td class="num">1</td><td class="date">23 Apr 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-sasha-grove-western">Sasha Grove</a><span class="sub">Western United. The first Matildas Monitor report.</span></td><td class="tier">Tier 2</td></tr>
+          <tr><td class="num">23</td><td class="date">25 Oct 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-r6-asha-sutton">Asha Sutton</a><span class="sub">R6. ALW Round 2 v Melbourne City.</span></td><td class="club">Sydney FC, A-League Women</td><td class="age">18</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">22</td><td class="date">20 Sep 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-aideen-keane-in-the">Aideen Keane</a><span class="sub">R5. NPLW Victoria Grand Final.</span></td><td class="club">Avondale, NPLW Victoria (signed by Melbourne City, ALW)</td><td class="age">24</td><td class="caps">Uncapped</td><td class="tier">Tier 2</td></tr>
+          <tr><td class="num">21</td><td class="date">19 Aug 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-r4-leyla-hussein">Leyla Hussein</a><span class="sub">R4. NPLW Victoria.</span></td><td class="club">Melbourne Victory, NPLW Victoria</td><td class="age">17</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">20</td><td class="date">18 Jul 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-heidi-dalton-south-melbourne">Heidi Dalton</a><span class="sub">NPLW Victoria.</span></td><td class="club">South Melbourne FC, NPLW Victoria</td><td class="age">17</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">19</td><td class="date">27 Jun 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-jonti-fisher-a-creator">Jonti Fisher</a><span class="sub">R3. NPLW Queensland v Sunshine Coast Wanderers.</span></td><td class="club">Brisbane City, NPLW Queensland</td><td class="age">20</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">18</td><td class="date">8 Mar 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-lily-punch-football">Lily Punch</a><span class="sub">NPLW Queensland.</span></td><td class="club">Football Queensland Academy, NPLW Queensland</td><td class="age">b. 2008</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">17</td><td class="date">1 Mar 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/layla-adams-19-resilience-under-pressure">Layla Adams</a><span class="sub">Goalkeeper. NPLW Queensland v Eastern Suburbs.</span></td><td class="club">Gold Coast United, NPLW Queensland</td><td class="age">19</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">16</td><td class="date">13 Feb 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/amelia-tartaglia-17-nplw-victoria">Amelia Tartaglia</a><span class="sub">Right back. NPLW Victoria Round 1.</span></td><td class="club">Box Hill United, NPLW Victoria</td><td class="age">17</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">15</td><td class="date">22 Jan 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/a-calm-head-in-a-hostile-place-ilona">Ilona Melegh</a><span class="sub">Goalkeeper. ALW away to Newcastle.</span></td><td class="club">Adelaide United, A-League Women</td><td class="age">17</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">14</td><td class="date">24 Dec 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/alexia-apostolakis-melbourne-derby">Alexia Apostolakis</a><span class="sub">Right back. ALW Melbourne Derby.</span></td><td class="club">Melbourne City, A-League Women</td><td class="age">b. 2006</td><td class="caps">Capped Jul 2025</td><td class="tier">Tier 2</td></tr>
+          <tr><td class="num">13</td><td class="date">13 Dec 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/willa-pearson-14-an-a-league-test">Willa Pearson</a><span class="sub">Centre back. An A-League test case.</span></td><td class="club">Sydney FC, A-League Women</td><td class="age">14</td><td class="caps">Uncapped</td><td class="tier">Pathway (U15)</td></tr>
+          <tr><td class="num">12</td><td class="date">17 Nov 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/avaani-prakash-a-relentless-ball">Avaani Prakash</a><span class="sub">Midfield. ALW Round 3.</span></td><td class="club">Central Coast Mariners, A-League Women</td><td class="age">18</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">11</td><td class="date">9 Nov 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/shelby-mcmahon-17-composed-clinical">Shelby McMahon</a><span class="sub">ALW Round 2.</span></td><td class="club">Melbourne City, A-League Women</td><td class="age">17</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">10</td><td class="date">3 Nov 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/talia-younis-17-sharp-first-touch">Talia Younis</a><span class="sub">ALW season opener v Perth.</span></td><td class="club">Western Sydney Wanderers, A-League Women</td><td class="age">17</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">9</td><td class="date">6 Sep 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-spotlight-aeryn-tarrant">Aeryn Tarrant</a><span class="sub">Scouting Spotlight. NPLW semi-final v Essendon Royals.</span></td><td class="club">Heidelberg United, NPLW Victoria</td><td class="age">16</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">8</td><td class="date">30 Aug 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-alexis-pantazopoulos">Alexis Pantazopoulos</a><span class="sub">Forward. NPLW Victoria.</span></td><td class="club">South Melbourne FC, NPLW Victoria</td><td class="age">16</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">7</td><td class="date">16 Aug 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-ava-briedis">Ava Briedis</a><span class="sub">Midfield. NPLW Victoria.</span></td><td class="club">Bulleen Lions, NPLW Victoria</td><td class="age">b. 2006</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">6</td><td class="date">8 Jul 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-tahlia-franco-composed">Tahlia Franco</a><span class="sub">Goalkeeper. NPLW NSW v Newcastle Jets.</span></td><td class="club">Macarthur Rams, NPLW NSW</td><td class="age">b. 2006</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">5</td><td class="date">25 Jun 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/poppy-okeeffe-deep-lying-composure">Poppy O'Keeffe</a><span class="sub">Midfield. NPLW Victoria v South Melbourne.</span></td><td class="club">FV Academy, NPLW Victoria</td><td class="age">16</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">4</td><td class="date">17 Jun 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-danella-butrus-bulleen">Danella Butrus</a><span class="sub">Midfield. NPLW Victoria.</span></td><td class="club">Bulleen Lions, NPLW Victoria</td><td class="age">b. 2007</td><td class="caps">Uncapped</td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">3</td><td class="date">1 Jun 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/winonah-heatley-deep-lying-control">Winonah Heatley</a><span class="sub">Matildas international.</span></td><td class="club">Matildas (senior national team)</td><td class="age">b. 2001</td><td class="caps">Capped</td><td class="tier">Senior</td></tr>
+          <tr><td class="num">2</td><td class="date">8 May 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-alana-murphy-deep">Alana Murphy</a><span class="sub">Midfield. A-League Women.</span></td><td class="club">Melbourne Victory, A-League Women</td><td class="age">b. 2005</td><td class="caps">Capped Feb 2025</td><td class="tier">Tier 2</td></tr>
+          <tr><td class="num">1</td><td class="date">23 Apr 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-sasha-grove-western">Sasha Grove</a><span class="sub">Defender. The first Matildas Monitor report.</span></td><td class="club">Western United, A-League Women</td><td class="age">b. 2004</td><td class="caps">Uncapped</td><td class="tier">Tier 2</td></tr>
         </tbody>
       </table>
     </section>
