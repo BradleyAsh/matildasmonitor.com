@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scouting Reports Index | Matildas Monitor</title>
+
+  <link rel="canonical" href="https://www.matildasmonitor.com/reports/">
+
+  <meta name="description" content="Every Matildas Monitor scouting report in one place: 23 individual player reports on Australian women's footballers, plus tournament coverage from the CommBank Emerging Matildas Championships.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Scouting Reports Index | Matildas Monitor">
+  <meta property="og:description" content="Every Matildas Monitor scouting report in one place: 23 individual player reports plus Emerging Matildas Championships coverage.">
+  <meta property="og:url" content="https://www.matildasmonitor.com/reports/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Matildas Monitor">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5H8MN9P40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C5H8MN9P40');
+  </script>
+
+  <style>
+    :root {
+      --green: #1a5c2e;
+      --green-mid: #2e7d4a;
+      --green-light: #e8f2ec;
+      --green-border: #c2dbc9;
+      --bg: #ffffff;
+      --bg-surface: #f6faf7;
+      --text: #1a2620;
+      --text-muted: #6b7e72;
+      --text-sub: #3d5446;
+      --divider: #dde9e1;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .top-bar { height: 4px; background: var(--green); }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 60px;
+      border-bottom: 1px solid var(--divider);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand-name { font-size: 20px; color: var(--green); letter-spacing: 0.01em; }
+    .brand-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); opacity: 0.4; }
+    .brand-tag { font-size: 10px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    nav { display: flex; align-items: center; gap: 24px; }
+    .nav-link {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--green); }
+    .nav-link.substack {
+      background: var(--green);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-link.substack:hover { background: var(--green-mid); }
+
+    .hero {
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--divider);
+      background: var(--bg-surface);
+    }
+    .hero-title { font-size: 20px; font-weight: bold; color: var(--green); line-height: 1.2; margin-bottom: 2px; }
+    .hero-desc { font-size: 13px; color: var(--text-muted); max-width: 640px; line-height: 1.4; }
+    .hero-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .meta-chip {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      background: var(--bg);
+    }
+    .meta-chip span { color: var(--green); margin-left: 4px; }
+
+    main { padding: 24px 40px 40px; max-width: 1100px; }
+
+    section + section { margin-top: 36px; }
+
+    h2 { font-size: 16px; color: var(--green); margin-bottom: 6px; }
+    .section-note { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; max-width: 760px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead th {
+      text-align: left;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: normal;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--green-border);
+      background: var(--bg-surface);
+    }
+    tbody td {
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--divider);
+      vertical-align: top;
+      line-height: 1.4;
+      color: var(--text-sub);
+    }
+    tbody tr:hover { background: var(--bg-surface); }
+    td.num { color: var(--text-muted); white-space: nowrap; width: 48px; }
+    td.date { white-space: nowrap; color: var(--text-muted); width: 110px; }
+    td.tier { white-space: nowrap; width: 90px; }
+    td.title a { color: var(--green); border-bottom: 1px solid var(--green-border); }
+    td.title a:hover { border-color: var(--green); }
+    .sub { display: block; font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    .info-bar {
+      display: flex;
+      align-items: stretch;
+      border-top: 1px solid var(--divider);
+      border-bottom: 1px solid var(--divider);
+      background: var(--bg-surface);
+    }
+    .info-cell { flex: 1; padding: 20px 40px; border-right: 1px solid var(--divider); }
+    .info-cell:last-child { border-right: none; }
+    .info-label { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+    .info-value { font-size: 14px; color: var(--text-sub); letter-spacing: 0.02em; line-height: 1.5; }
+    .info-link { color: var(--green); border-bottom: 1px solid var(--green-border); }
+    .info-link:hover { border-color: var(--green); }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      background: var(--bg);
+    }
+    .footer-left { font-size: 10px; color: var(--text-muted); letter-spacing: 0.06em; }
+    .footer-left a { color: var(--text-muted); }
+    .footer-left a:hover { color: var(--green); }
+    .social-links { display: flex; align-items: center; gap: 20px; }
+    .social-link { font-size: 10px; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    .social-link:hover { color: var(--green); }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; }
+      .brand-tag, nav .nav-link:not(.substack) { display: none; }
+      .hero { flex-direction: column; align-items: flex-start; padding: 12px 20px; gap: 6px; }
+      .hero-title { font-size: 16px; }
+      .hero-right { display: none; }
+      main { padding: 20px 16px 32px; }
+      thead { display: none; }
+      table, tbody, tr, td { display: block; width: auto; }
+      tbody tr { padding: 10px 0; border-bottom: 1px solid var(--divider); }
+      tbody td { padding: 2px 0; border: none; }
+      td.num, td.date, td.tier { display: inline-block; margin-right: 10px; font-size: 12px; }
+      .info-bar { flex-direction: column; }
+      .info-cell { padding: 16px 20px; border-right: none; border-bottom: 1px solid var(--divider); }
+      .info-cell:last-child { border-bottom: none; }
+      footer { flex-direction: column; gap: 12px; padding: 16px 20px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar"></div>
+
+  <header>
+    <div class="brand">
+      <a href="/" class="brand-name">Matildas Monitor</a>
+      <div class="brand-dot"></div>
+      <div class="brand-tag">Australian Women's Football</div>
+    </div>
+    <nav>
+      <a href="/" class="nav-link">Player Database</a>
+      <a href="https://x.com/MatildasMonitor" target="_blank" rel="noopener" class="nav-link">X / Twitter</a>
+      <a href="https://bsky.app/profile/matildasmonitor.bsky.social" target="_blank" rel="noopener" class="nav-link">Bluesky</a>
+      <a href="https://matildasmonitor.substack.com/" target="_blank" rel="noopener" class="nav-link substack">Subscribe on Substack ↗</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h1 class="hero-title">Scouting Reports Index</h1>
+      <p class="hero-desc">Every Matildas Monitor report, in publication order. Each entry links to the full report on Substack. Player reports follow the pathway tiers used in the <a href="/#about-the-database" style="color:#1b5e3a;text-decoration:underline;">player database</a>.</p>
+    </div>
+    <div class="hero-right">
+      <div class="meta-chip">Player reports <span>23</span></div>
+      <div class="meta-chip">Since <span>Apr 2025</span></div>
+    </div>
+  </section>
+
+  <main>
+    <section id="player-reports">
+      <h2>Individual player reports</h2>
+      <p class="section-note">One player, one match, usually the full 90 minutes. Tier 1 is uncapped players aged 15 to 22 on the pathway. Tier 2 is emerging A-League Women players. Reports are numbered in the order they were published.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Published</th>
+            <th>Report</th>
+            <th>Tier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">23</td><td class="date">25 Oct 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-r6-asha-sutton">Asha Sutton</a><span class="sub">Sydney FC. Scouting Report R6: A-League Women, Round 2 v Melbourne City.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">22</td><td class="date">20 Sep 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-aideen-keane-in-the">Aideen Keane</a><span class="sub">Melbourne City (Avondale). Scouting Report R5: NPLW Victoria Grand Final.</span></td><td class="tier">Tier 2</td></tr>
+          <tr><td class="num">21</td><td class="date">19 Aug 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-r4-leyla-hussein">Leyla Hussein</a><span class="sub">Melbourne Victory. Scouting Report R4: NPLW Victoria.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">20</td><td class="date">18 Jul 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-heidi-dalton-south-melbourne">Heidi Dalton</a><span class="sub">South Melbourne FC. NPLW Victoria.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">19</td><td class="date">27 Jun 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-jonti-fisher-a-creator">Jonti Fisher</a><span class="sub">Scouting Report R3: a creator in the wrong role.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">18</td><td class="date">8 Mar 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-lily-punch-football">Lily Punch</a><span class="sub">Football Queensland Academy.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">17</td><td class="date">1 Mar 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/layla-adams-19-resilience-under-pressure">Layla Adams</a><span class="sub">Goalkeeper, NPL Queensland. Resilience under pressure.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">16</td><td class="date">13 Feb 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/amelia-tartaglia-17-nplw-victoria">Amelia Tartaglia</a><span class="sub">Box Hill United. NPLW Victoria, Round 1.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">15</td><td class="date">22 Jan 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/a-calm-head-in-a-hostile-place-ilona">Ilona Melegh</a><span class="sub">Goalkeeper. A calm head in a hostile place, away to Newcastle.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">14</td><td class="date">24 Dec 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/alexia-apostolakis-melbourne-derby">Alexia Apostolakis</a><span class="sub">A-League Women, Melbourne Derby.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">13</td><td class="date">13 Dec 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/willa-pearson-14-an-a-league-test">Willa Pearson</a><span class="sub">A-League Women. An A-League test case at 14.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">12</td><td class="date">17 Nov 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/avaani-prakash-a-relentless-ball">Avaani Prakash</a><span class="sub">A relentless ball-winning engine at 18.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">11</td><td class="date">9 Nov 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/shelby-mcmahon-17-composed-clinical">Shelby McMahon</a><span class="sub">Composed, clinical, and mature beyond her years.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">10</td><td class="date">3 Nov 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/talia-younis-17-sharp-first-touch">Talia Younis</a><span class="sub">Sharp first touch, live inswinger.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">9</td><td class="date">6 Sep 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-spotlight-aeryn-tarrant">Aeryn Tarrant</a><span class="sub">Scouting Spotlight: pressure test on both flanks.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">8</td><td class="date">30 Aug 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-alexis-pantazopoulos">Alexis Pantazopoulos</a><span class="sub">Sixteen and strong.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">7</td><td class="date">16 Aug 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-ava-briedis">Ava Briedis</a><span class="sub">Scouting report.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">6</td><td class="date">8 Jul 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-tahlia-franco-composed">Tahlia Franco</a><span class="sub">Composed under pressure, but room to grow.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">5</td><td class="date">25 Jun 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/poppy-okeeffe-deep-lying-composure">Poppy O'Keeffe</a><span class="sub">Deep-lying composure at 16.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">4</td><td class="date">17 Jun 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scout-report-danella-butrus-bulleen">Danella Butrus</a><span class="sub">Bulleen Lions. NPLW Victoria.</span></td><td class="tier">Tier 1</td></tr>
+          <tr><td class="num">3</td><td class="date">1 Jun 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/winonah-heatley-deep-lying-control">Winonah Heatley</a><span class="sub">Deep-lying control on display for the Matildas.</span></td><td class="tier">Senior</td></tr>
+          <tr><td class="num">2</td><td class="date">8 May 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-alana-murphy-deep">Alana Murphy</a><span class="sub">Melbourne Victory. Deep-lying composure.</span></td><td class="tier">Tier 2</td></tr>
+          <tr><td class="num">1</td><td class="date">23 Apr 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/scouting-report-sasha-grove-western">Sasha Grove</a><span class="sub">Western United. The first Matildas Monitor report.</span></td><td class="tier">Tier 2</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="tournament-coverage">
+      <h2>Tournament coverage and other posts</h2>
+      <p class="section-note">Match-by-match scouting from the CommBank Emerging Matildas Championships (EMC), the national U16 state-team tournament, plus previews, follow-ups and database announcements. These are not counted as individual player reports.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Published</th>
+            <th>Post</th>
+            <th>Series</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="date">27 Apr 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-2026-final-scouting-summary-top">EMC 2026 Final Scouting Summary</a><span class="sub">Top 3 players of the tournament and notable mentions.</span></td><td class="tier">EMC 2026</td></tr>
+          <tr><td class="date">24 Apr 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-2026-report-012-victoria-blue">EMC 2026 Report 012: Victoria Blue 0-2 Western Australia</a><span class="sub">U16 Final.</span></td><td class="tier">EMC 2026</td></tr>
+          <tr><td class="date">21 Apr 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-2026-report-011-nsw-sky-02-victoria">EMC 2026 Report 011: NSW Sky 0-2 Victoria Blue</a><span class="sub">Semi-final.</span></td><td class="tier">EMC 2026</td></tr>
+          <tr><td class="date">18 Apr 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/report-010-is-live-nsw-sky-10-nsw">EMC 2026 Report 010: NSW Sky 1-0 NSW Navy</a><span class="sub">Quarter-final.</span></td><td class="tier">EMC 2026</td></tr>
+          <tr><td class="date">18 Apr 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-2026-report-009-south-australia">EMC 2026 Report 009: South Australia 0-1 Queensland Maroon</a><span class="sub">Group A, Day 3.</span></td><td class="tier">EMC 2026</td></tr>
+          <tr><td class="date">17 Apr 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-2026-report-008-western-australia">EMC 2026 Report 008: Western Australia 1-0 Northern NSW</a><span class="sub">Group B, Day 2.</span></td><td class="tier">EMC 2026</td></tr>
+          <tr><td class="date">16 Apr 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-2026-report-007-victoria-blue">EMC 2026 Report 007: Victoria Blue 1-1 Capital Football</a><span class="sub">Group stage.</span></td><td class="tier">EMC 2026</td></tr>
+          <tr><td class="date">27 Mar 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/before-the-first-whistle-the-matildas">Before the First Whistle: The Matildas Monitor Guide to EMC26</a><span class="sub">Tournament preview.</span></td><td class="tier">EMC 2026</td></tr>
+          <tr><td class="date">22 Mar 2026</td><td class="title"><a href="https://matildasmonitor.substack.com/p/where-are-they-now-checking-in-on">Where Are They Now? Checking in on the Stars of EMC 2025</a><span class="sub">Follow-up on the 2025 tournament.</span></td><td class="tier">EMC 2025</td></tr>
+          <tr><td class="date">22 Oct 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/weve-opened-the-player-database-beta">We've opened the Player Database (Beta)</a><span class="sub">Launch of the public player database.</span></td><td class="tier">Database</td></tr>
+          <tr><td class="date">7 Aug 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-2025-final-scouting-summary">EMC 2025 Final Scouting Summary</a><span class="sub">Tournament wrap.</span></td><td class="tier">EMC 2025</td></tr>
+          <tr><td class="date">6 Aug 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-report-006-nsw-sky-vs-victoria">EMC Report 006: NSW Sky v Victoria Blue</a><span class="sub">Final.</span></td><td class="tier">EMC 2025</td></tr>
+          <tr><td class="date">30 Jul 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-report-005-queensland-maroon">EMC Report 005: Queensland Maroon v Victoria Blue</a><span class="sub">Semi-final.</span></td><td class="tier">EMC 2025</td></tr>
+          <tr><td class="date">25 Jul 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-report-004-victoria-blue-vs-northern">EMC Report 004: Victoria Blue v Northern NSW</a><span class="sub">U16 quarter-final.</span></td><td class="tier">EMC 2025</td></tr>
+          <tr><td class="date">23 Jul 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-report-003-nsw-sky-vs-south-australia">EMC Report 003: NSW Sky v South Australia</a><span class="sub">U16 group stage.</span></td><td class="tier">EMC 2025</td></tr>
+          <tr><td class="date">19 Jul 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/emc-report-002-victoria-white-vs">EMC Report 002: Victoria White v Queensland Maroon</a><span class="sub">U16 group stage.</span></td><td class="tier">EMC 2025</td></tr>
+          <tr><td class="date">17 Jul 2025</td><td class="title"><a href="https://matildasmonitor.substack.com/p/matildas-monitor-emc-scouting-report">EMC Scouting Report 001</a><span class="sub">First match report of the 2025 tournament.</span></td><td class="tier">EMC 2025</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <div class="info-bar">
+    <div class="info-cell">
+      <div class="info-label">How reports are written</div>
+      <div class="info-value">One match observed in full, every involvement logged, graded against a position-specific attribute framework. Grades are published in the report PDF, not on social media.</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-label">Privacy</div>
+      <div class="info-value">Players under 16 are identified by year of birth only. No personal information beyond the football record is published.</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-label">Corrections &amp; Takedowns</div>
+      <div class="info-value">
+        <a href="https://forms.gle/jaRegyoQistoocBaA" target="_blank" rel="noopener" class="info-link">Submit a correction</a>
+        &nbsp;·&nbsp;
+        <a href="https://docs.google.com/document/d/18BxzX_KysZy-wMlV7uPuLfs2JlzCgL9kHZmfL3wDr2M/edit?usp=sharing" target="_blank" rel="noopener" class="info-link">Data &amp; takedown policy</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      © Matildas Monitor &nbsp;·&nbsp;
+      <a href="mailto:bradleyash04+matildasmonitor@gmail.com">Contact</a>
+    </div>
+    <div class="social-links">
+      <a href="/" class="social-link">Database</a>
+      <a href="https://x.com/MatildasMonitor" target="_blank" rel="noopener" class="social-link">X</a>
+      <a href="https://bsky.app/profile/matildasmonitor.bsky.social" target="_blank" rel="noopener" class="social-link">Bluesky</a>
+      <a href="https://matildasmonitor.substack.com/" target="_blank" rel="noopener" class="social-link">Substack</a>
+    </div>
+  </footer>
+
+</body>
+</html>
